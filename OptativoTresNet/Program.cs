@@ -2,21 +2,55 @@
 // See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
-using OptativoTresNet.ClasePOO;
 
-Vehiculo vehiculo = new Auto("ASB-123",
-                      "Toyota Vitz",
-                      2010,
-                      "Gris",
-                      "Sucio",
-                      "Pequeño",
-                      "cortado");
+using OptativoTresNet.Conexiones;
 
-vehiculo.frenar();
+ConexionDB objBaseDatos = new ConexionDB("Server=localhost;Port=15432;User Id=postgres;Password=12345;Database=Optativo2;");
+if (objBaseDatos.probarConexion())
+    Console.WriteLine("Se conectó a la base de datos");
 
-vehiculo = new Moto("ACD-987", "Dakar", 2020, "azul", "Limpio");
+Console.WriteLine("...");
 
-vehiculo.frenar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//using OptativoTresNet.ClasePOO;
+
+//Vehiculo vehiculo;
+
+//vehiculo = new Auto("ASB-123",
+//                      "Toyota Vitz",
+//                      2010,
+//                      "Gris",
+//                      "Sucio",
+//                      "Pequeño",
+//                      "cortado");
+
+//vehiculo.frenar();
+
+//vehiculo = new Moto("ACD-987", "Dakar", 2020, "azul", "Limpio");
+
+//vehiculo.frenar();
 
 
 

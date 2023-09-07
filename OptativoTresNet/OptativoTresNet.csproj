@@ -9,8 +9,15 @@
 
   <ItemGroup>
     <None Remove="ClasePOO\" />
+    <None Remove="Contactos\" />
+    <None Remove="Conexiones\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClasePOO\" />
+    <Folder Include="Contactos\" />
+    <Folder Include="Conexiones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
   </ItemGroup>
 </Project>
