@@ -1,6 +1,6 @@
 ﻿using System;
 using Npgsql;
-namespace OptativoTresNet.Conexiones
+namespace Infraestructura.Conexiones
 {
 	public class ConexionDB
 	{
@@ -13,13 +13,12 @@ namespace OptativoTresNet.Conexiones
 			conexion = new NpgsqlConnection(cadenaConexion);
 		}
 
-		public bool probarConexion()
+		public NpgsqlConnection GetConexion()
 		{
 
-
-			conexion.Open();
-
-			return true;
+			if(conexion.State != System.Data.ConnectionState.Open)
+				conexion.Open();
+			return conexion;
 		}
 	}
 }

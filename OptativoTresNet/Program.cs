@@ -3,11 +3,23 @@
 // Console.WriteLine("Hello, World!");
 
 
-using OptativoTresNet.Conexiones;
+using Infraestructura.Conexiones;
+using Servicios.ContactosService;
 
-ConexionDB objBaseDatos = new ConexionDB("Server=localhost;Port=15432;User Id=postgres;Password=12345;Database=Optativo2;");
-if (objBaseDatos.probarConexion())
-    Console.WriteLine("Se conectó a la base de datos");
+CiudadService ciudadService = new CiudadService("Server=localhost;Port=15432;User Id=postgres;Password=12345;Database=Optativo2;");
+//ciudadService.insertarCiudad(new Infraestructura.Modelos.CiudadModel
+//{
+//    idCiudad = 3,
+//    descripcion = "",
+//    nombre_corto = "MRA",
+//    estado = "Activo"
+//});
+
+var ciudad = ciudadService.obtenerCiudad(2);
+Console.WriteLine($"Descripcion: {ciudad.descripcion}, nombre corto: {ciudad.nombre_corto}");
+
+ciudad.descripcion = "Mariano Roque Alonso";
+ciudadService.modificarCiudad(ciudad);
 
 Console.WriteLine("...");
 

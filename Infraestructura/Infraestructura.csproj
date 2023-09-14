@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ClasePOO\" />
+    <None Remove="Conexiones\" />
+    <None Remove="Datos\" />
+    <None Remove="Modelos\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClasePOO\" />
+    <Folder Include="Conexiones\" />
+    <Folder Include="Datos\" />
+    <Folder Include="Modelos\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Servicios\Servicios.csproj" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
   </ItemGroup>
 </Project>
