@@ -33,7 +33,7 @@ namespace Servicios.ContactosService
 		{
 			if(ciudad.descripcion.Trim().Length < 2)
 			{
-				throw new Exception("La descripción no debe estar nulo");
+				throw new Exception("La descripción debe tener al menos 2 caracteres");
 			}
 		}
 
