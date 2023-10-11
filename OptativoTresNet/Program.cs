@@ -6,20 +6,26 @@
 using Infraestructura.Conexiones;
 using Servicios.ContactosService;
 
-CiudadService ciudadService = new CiudadService("Server=localhost;Port=15432;User Id=postgres;Password=12345;Database=Optativo2;");
-//ciudadService.insertarCiudad(new Infraestructura.Modelos.CiudadModel
-//{
-//    idCiudad = 3,
-//    descripcion = "",
-//    nombre_corto = "MRA",
-//    estado = "Activo"
-//});
+//string connectionString = "Host=localhost;Username=root;Password=123456;Database=Optativo2;";
+var connectionString = "Host=localhost;User Id=postgres;Password=654321;Database=Optativo2;";
 
-var ciudad = ciudadService.obtenerCiudad(2);
+CiudadService ciudadService = new CiudadService(connectionString);
+
+
+
+ciudadService.insertarCiudad(new Infraestructura.Modelos.CiudadModel
+{
+    idCiudad = 2,
+    descripcion = "Ciudad del Este",
+    nombre_corto = "CDE",
+    estado = "Activo"
+});
+
+var ciudad = ciudadService.obtenerCiudad(1);
 Console.WriteLine($"Descripcion: {ciudad.descripcion}, nombre corto: {ciudad.nombre_corto}");
 
-ciudad.descripcion = "Mariano Roque Alonso";
-ciudadService.modificarCiudad(ciudad);
+//ciudad.descripcion = "Mariano Roque Alonso";
+//ciudadService.modificarCiudad(ciudad);
 
 Console.WriteLine("...");
 
